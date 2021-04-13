@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.git4pl.asprojecttemplate.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.git4pl.asprojecttemplate.MyBundle
 
 class MyApplicationService {
 
