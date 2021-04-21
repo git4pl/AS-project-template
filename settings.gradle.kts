@@ -1,1 +1,1 @@
-rootProject.name = "AS-project-template"
+rootProject.name = "Fast-Coding"

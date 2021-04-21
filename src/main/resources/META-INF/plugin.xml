@@ -1,19 +1,25 @@
 <idea-plugin>
-    <id>com.github.git4pl.asprojecttemplate</id>
-    <name>AS-project-template</name>
-    <vendor>git4pl</vendor>
+    <id>com.pltech.mvvm</id>
+    <name>Fast Code!</name>
+    <vendor>alexyz</vendor>
 
     <!-- Product and plugin compatibility requirements -->
-    <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <!-- https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
+    <depends>org.jetbrains.android</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>com.intellij.modules.java</depends>
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.git4pl.asprojecttemplate.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.git4pl.asprojecttemplate.services.MyProjectService"/>
+        <applicationService serviceImplementation="com.study.mvvm.services.MyApplicationService" />
+        <projectService serviceImplementation="com.study.mvvm.services.MyProjectService" />
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.git4pl.asprojecttemplate.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
+        <listener class="com.study.mvvm.listeners.MyProjectManagerListener" topic="com.intellij.openapi.project.ProjectManagerListener" />
     </applicationListeners>
+
+    <extensions defaultExtensionNs="com.android.tools.idea.wizard.template">
+        <wizardTemplateProvider implementation="other.SamplePluginTemplateProviderImpl" />
+    </extensions>
 </idea-plugin>
