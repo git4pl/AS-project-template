@@ -19,6 +19,17 @@
         <listener class="com.study.mvvm.listeners.MyProjectManagerListener" topic="com.intellij.openapi.project.ProjectManagerListener" />
     </applicationListeners>
 
+    //设置actions按键设置
+    <actions>
+        <action id="com.wuba.shiq.gsonformat" class="other.mvvm.actions.GsonFormatAction" text="GsonFormat">
+            <add-to-group group-id="BuildMenu" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="meta N"/>
+        </action>
+
+    </actions>
+
+
+
     <extensions defaultExtensionNs="com.android.tools.idea.wizard.template">
         <wizardTemplateProvider implementation="other.SamplePluginTemplateProviderImpl" />
     </extensions>

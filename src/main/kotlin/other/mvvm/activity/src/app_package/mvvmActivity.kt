@@ -1,5 +1,8 @@
 package other.mvvm.activity.src.app_package
 
+/**
+ * 创建Activity的模板代码实现
+ */
 fun mvvmActivityKt(
     applicationPackage: String?,
     activityClass: String,
