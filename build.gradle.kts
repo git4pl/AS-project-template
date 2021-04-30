@@ -16,6 +16,7 @@ plugins {
     id("io.gitlab.arturbosch.detekt") version "1.15.0"
     // ktlint linter - read more: https://github.com/JLLeitschuh/ktlint-gradle
     id("org.jlleitschuh.gradle.ktlint") version "9.4.1"
+
 }
 
 // Import variables from gradle.properties file
@@ -44,6 +45,7 @@ repositories {
 dependencies {
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.15.0")
     compileOnly(files("lib/wizard-template.jar"))
+    compileOnly(files("lib/fastjson-1.2.60.jar"))
 }
 
 // Configure gradle-intellij-plugin plugin.

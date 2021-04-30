@@ -13,7 +13,18 @@
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.study.mvvm.services.MyApplicationService" />
         <projectService serviceImplementation="com.study.mvvm.services.MyProjectService" />
+
+        <!--icon="/icons/job_video_hot.jpg" -->
+        //设置IDE界面右侧开发助手
+        <toolWindow id="wuba开发助手"  anchor="right" factoryClass="com.study.mvvm.factory.WubaToolWindowFactory"/>
     </extensions>
+
+    //设置menu按钮
+    <application-components>
+        <component>
+            <implementation-class>com.study.mvvm.menu.CustomizeMenu</implementation-class>
+        </component>
+    </application-components>
 
     <applicationListeners>
         <listener class="com.study.mvvm.listeners.MyProjectManagerListener" topic="com.intellij.openapi.project.ProjectManagerListener" />
@@ -25,6 +36,36 @@
             <add-to-group group-id="BuildMenu" anchor="last"/>
             <keyboard-shortcut keymap="$default" first-keystroke="meta N"/>
         </action>
+
+        <!-- 添加自定义组信息，添加到menu最后一位 -->
+        <group id="customizeMenu" text="wubaPlugin">
+            <add-to-group group-id="MainMenu" anchor="last" >
+            </add-to-group>
+          <!--  <add-to-group group-id="MainToolBar" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <add-to-group group-id="ConsoleEditorPopupMenu" anchor="first"/>
+            <add-to-group group-id="ToolsMenu" anchor="first"/>-->
+        </group>
+
+
+
+        <action class="com.study.mvvm.menu.MVVMHelpAction" id="mvvmHelpAction" text="MVVM 使用详情">
+            <add-to-group group-id="customizeMenu" anchor="first" />
+           <!-- <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift W"/>-->
+        </action>
+
+        <action class="com.study.mvvm.menu.SDKHelpAction" id="sdkHelpAction" text="SDK 代码调用">
+            <add-to-group group-id="customizeMenu" />
+        </action>
+
+        <action class="com.study.mvvm.action.ActionLogAction" id="actionLogAction" text="actionLog生成">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+
+        <action class="com.study.mvvm.action.WubaNetAction" id="wubaNetAction" text="wubaNet调用">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+
 
     </actions>
 

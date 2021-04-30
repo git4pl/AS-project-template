@@ -17,7 +17,7 @@ import other.mvvm.fragment.mvvmFragmentTemplate
  * @Version:        1.0.1
  */
 class SamplePluginTemplateProviderImpl : WizardTemplateProvider() {
-
+    //设置展示数据
     override fun getTemplates(): List<Template> = listOf(
         mvvmActivityTemplate,
         mvvmFragmentTemplate,

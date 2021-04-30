@@ -6,12 +6,28 @@ import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
 val mvvmActivityTemplate
     get() = template {
         revision = 1
+        /**
+         * 展示关键字
+         */
         name = "MVVM Activity"
+        /**
+         * 描述文字
+         */
         description = "适用于 Wuba MVVM 框架的 Activity"
         minApi = MIN_API
         minBuildApi = MIN_API
-
+        /**
+         * 右键后位于New哪个条目下面，这里是other
+         */
         category = Category.Other
+        /**
+         * 应用平台设置
+         * Mobile：Phone and Tablet 手机和平板使用
+         * Wear ：Wear OS/Android Wear 智能手表
+         * Tv ： 电视
+         *Automotive ：汽车
+         * Android Things:物联网
+         */
         formFactor = FormFactor.Mobile
         screens = listOf(
             WizardUiContext.ActivityGallery,
