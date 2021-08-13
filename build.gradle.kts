@@ -43,7 +43,7 @@ repositories {
     jcenter()
 }
 dependencies {
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.15.0")
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.18.0")
     compileOnly(files("lib/wizard-template.jar"))
     compileOnly(files("lib/fastjson-1.2.60.jar"))
 }
